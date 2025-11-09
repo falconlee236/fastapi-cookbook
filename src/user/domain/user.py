@@ -1,10 +1,12 @@
 from dataclasses import dataclass
-from datatime import datetime
+from datetime import datetime
+
 
 @dataclass
 class Profile:
     name: str
     email: str
+
 
 @dataclass
 class User:
