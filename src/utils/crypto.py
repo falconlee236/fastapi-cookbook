@@ -4,7 +4,7 @@ from passlib.context import CryptContext
 class Crypto:
     def __init__(self):
         self.pwd_context = CryptContext(
-            schemes=["bcrypt"],
+            schemes=["pbkdf2_sha256"],
             deprecated="auto",
         )
 
