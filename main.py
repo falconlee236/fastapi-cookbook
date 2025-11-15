@@ -1,6 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
 import uvicorn
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
@@ -23,6 +20,13 @@ async def validation_exception_handler(
         status_code=400,
         content=exc.errors()
     )
+
+
+@app.get("/ping")
+def ping():
+    return {
+        "result": "ok"
+    }
 
 
 if __name__ == "__main__":
